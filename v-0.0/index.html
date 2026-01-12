@@ -4,287 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vansh Labs | Advanced Diagnostic Center</title>
-    <meta name="description" content="Vansh Labs provides advanced diagnostic services including blood tests, MRI, CT scans, and ultrasound with accurate results.">
+    <meta name="description"
+        content="Vansh Labs - India's leading diagnostic center. Book blood tests, full body checkups with free home collection.">
+    <title>Vansh Labs | Advanced Diagnostics & Pathology</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- Custom CSS Variables --- */
-        :root {
-            --primary-blue: #005b96;
-            --light-blue: #e3f2fd;
-            --accent-color: #ffc107;
-            --text-dark: #333;
-            --whatsapp-color: #25D366;
-            --section-padding: 80px 0;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-dark);
-            padding-top: 76px;
-        }
-
-        /* --- Navbar --- */
-        .navbar {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            color: var(--primary-blue);
-            font-weight: 500;
-            margin-left: 15px;
-        }
-
-        .nav-link.active {
-            color: var(--primary-blue) !important;
-            border-bottom: 2px solid var(--primary-blue);
-        }
-        
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: #000;
-            font-weight: 600;
-            border: none;
-        }
-        .btn-accent:hover {
-            background-color: #e0a800;
-            color: #000;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #003d66 100%);
-            color: white;
-            padding: 80px 0;
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-        }
-
-        .booking-card {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            color: var(--text-dark);
-        }
-
-        /* Hero Buttons */
-        .btn-hero-primary {
-            background-color: var(--accent-color);
-            color: #000;
-            font-weight: 600;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: transform 0.3s;
-            text-decoration: none;
-        }
-        .btn-hero-primary:hover {
-            background-color: #e0a800;
-            color: #000;
-            transform: translateY(-2px);
-        }
-
-        .btn-hero-whatsapp {
-            background-color: var(--whatsapp-color);
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            transition: transform 0.3s;
-            text-decoration: none;
-        }
-        .btn-hero-whatsapp:hover {
-            background-color: #1ebc57;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* --- Floating WhatsApp Button --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--whatsapp-color);
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: #fff;
-        }
-
-        /* --- Section Styling --- */
-        section {
-            padding: var(--section-padding);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-blue);
-            font-weight: 700;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 15px auto 0;
-        }
-
-        /* --- Services Card Styling --- */
-        .service-box {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            border-color: var(--primary-blue);
-        }
-
-        /* Graphic Area */
-        .service-graphic {
-            height: 160px;
-            background-color: var(--light-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            font-size: 4.5rem;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .service-box:hover .service-graphic {
-            background-color: var(--primary-blue);
-            color: white;
-        }
-
-        .service-content {
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-content h4 {
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .service-price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #28a745;
-            margin-bottom: 15px;
-        }
-
-        .service-btn-container {
-            margin-top: auto;
-        }
-
-        /* --- Packages --- */
-        .bg-light-blue {
-            background-color: var(--light-blue);
-        }
-
-        .package-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .package-card:hover {
-             transform: scale(1.03);
-        }
-
-        .package-header {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            font-family: sans-serif;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        footer a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-             color: white;
-        }
-
-        @media (max-width: 768px) {
-            #hero {
-                padding: 50px 0;
-                text-align: center;
-            }
-            .booking-card {
-                margin-top: 40px;
-            }
-            .d-flex.gap-3 {
-                justify-content: center;
-            }
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assits/styles/style.css">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
@@ -301,435 +31,1479 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
                     <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <a class="btn btn-accent rounded-pill px-4" href="#hero"><i class="fas fa-calendar-check me-2"></i>Book Test</a>
+                    <li class="nav-item ms-lg-2">
+                        <a href="https://wa.me/9494335432
+" target="_blank" class="btn btn-main btn-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>Book Test
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="display-4 fw-bold mb-3">Welcome to Vansh Labs.<br>Precision in Every Test.</h1>
-                    <p class="lead mb-4" style="opacity: 0.9;">Experience world-class diagnostic services with state-of-the-art technology. Fast, accurate, and affordable results delivered to your phone.</p>
-                    
-                    <div class="d-flex flex-wrap gap-3 mb-5 justify-content-lg-start justify-content-center">
-                        <a href="#contact" class="btn btn-hero-primary shadow">
-                            <i class="fas fa-calendar-check me-2"></i>Book Appointment
-                        </a>
-                        <a href="https://wa.me/919876543210" class="btn btn-hero-whatsapp shadow" target="_blank">
-                            <i class="fab fa-whatsapp me-2"></i>WhatsApp Service
+    <section id="hero">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-lg-8 col-xl-7">
+                    <h1 class="hero-title">Your Health, Our Priority.<br><span>Smart Diagnostics.</span></h1>
+                    <p class="hero-subtitle">India's most trusted online diagnostic clinic. Accurate reports, NABL
+                        certified labs, and free home sample collection.</p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+                        <!-- <a href="#contact" class="btn btn-main btn-primary-custom">
+                            <i class="fas fa-calendar-check me-2"></i>Book Online
+                        </a> -->
+                        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-main btn-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i> Book Test
                         </a>
                     </div>
+                    <div class="mt-4 d-flex gap-4 justify-content-lg-start justify-content-center text-light">
+                        <small><i class="fas fa-check-circle text-success me-1"></i> ISO Certified</small>
+                        <small><i class="fas fa-check-circle text-success me-1"></i> 5M+ Happy Patients</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="d-flex gap-4 justify-content-lg-start justify-content-center">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-certificate fa-2x me-2 text-warning"></i>
-                            <span>NABL Accredited</span>
+    <!-- Process -->
+
+    <section id="process" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Process</h6>
+                <h2>How It Works</h2>
+            </div>
+            <div class="row text-center position-relative">
+                <div class="d-flex flex-column flex-md-row justify-content-between gap-5">
+                    <div class="steps">
+                        <div class="step-circle mx-auto mb-3">
+                            <svg id="fi_9401751" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512"
+                                width="512" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-rule="evenodd" fill-rule="evenodd">
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m176.326 68.624h-126.471v364.141c0 34.779 28.456 63.235 63.235 63.235 34.78 0 63.236-28.455 63.236-63.235z"
+                                                fill="#f4f6f8"></path>
+                                            <path
+                                                d="m180.032 16h-133.882c-11.476 0-20.835 9.36-20.835 20.835v20.954c0 11.476 9.36 20.835 20.835 20.835h133.882c11.475 0 20.835-9.36 20.835-20.835v-20.954c0-11.476-9.36-20.835-20.835-20.835z"
+                                                fill="#e4e8eb"></path>
+                                            <path
+                                                d="m49.855 298.847v133.918c0 34.779 28.456 63.235 63.235 63.235 34.78 0 63.236-28.455 63.236-63.235v-133.918z"
+                                                fill="#f76c82"></path>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="m332.952 326.284h34.363v66.327h-34.363z" fill="#a9b0bb"
+                                                    transform="matrix(.707 -.707 .707 .707 -151.616 352.867)"></path>
+                                                <ellipse cx="249.992" cy="259.307" fill="#a9b0bb" rx="122.952"
+                                                    ry="122.952"
+                                                    transform="matrix(.707 -.707 .707 .707 -110.137 252.72)"></ellipse>
+                                                <ellipse cx="249.992" cy="259.307" fill="#a4d4ff" rx="93.712"
+                                                    ry="93.713" transform="matrix(.973 -.23 .23 .973 -52.889 64.373)">
+                                                </ellipse>
+                                                <path
+                                                    d="m355.897 383.779 18.567-18.567c6.133-6.133 16.168-6.133 22.301 0l85.321 85.321c6.133 6.133 6.133 16.168 0 22.301l-18.567 18.566c-6.133 6.133-16.168 6.133-22.301 0l-85.321-85.321c-6.132-6.132-6.133-16.167 0-22.3z"
+                                                    fill="#7e6451"></path>
+                                            </g>
+                                            <path
+                                                d="m249.992 215.513 20.099 32.765c8.175 13.326 11.055 35.477 0 46.531-11.055 11.055-29.144 11.055-40.198 0-11.055-11.055-8.175-33.205 0-46.531z"
+                                                fill="#f76c82"></path>
+                                        </g>
+                                    </g>
+                                    <path
+                                        d="m265.152 289.86c-4.047 4.02-9.411 6.241-15.152 6.241s-11.152-2.221-15.152-6.241c-8.141-8.13-5.976-26.511.988-37.92l14.164-23.041 14.117 23.041c7.011 11.409 9.129 29.79 1.035 37.92zm-9.223-78.011c-1.27-2.07-3.529-3.34-5.929-3.34-2.447 0-4.706 1.27-5.976 3.34l-20.093 32.76c-9.929 16.141-12.328 41.809.988 55.15 6.682 6.66 15.575 10.34 25.08 10.34 9.458 0 18.351-3.68 25.033-10.34 13.317-13.341 10.917-39.009 1.035-55.15zm221.207 256.03-18.587 18.57c-3.388 3.421-8.988 3.41-12.376 0l-85.311-85.321c-1.647-1.649-2.588-3.849-2.588-6.2 0-2.36.941-4.558 2.588-6.2l18.54-18.57c1.694-1.709 3.953-2.57 6.211-2.57 2.259 0 4.47.861 6.211 2.57l85.311 85.321c1.647 1.639 2.541 3.84 2.541 6.2.001 2.351-.893 4.561-2.54 6.2zm-128.367-124.209c-4.423 5.16-9.27 9.979-14.399 14.39l18.681 18.679 14.352-14.4zm-214.76-84.37c0 63.939 52.043 115.959 115.991 115.959 63.901 0 115.944-52.02 115.944-115.959 0-63.931-52.043-115.951-115.944-115.951-63.948 0-115.991 52.02-115.991 115.951zm35.292 173.459c0 31.01-25.222 56.24-56.231 56.24s-56.231-25.23-56.231-56.24v-126.919h71.806c8.423 21.879 22.587 40.929 40.656 55.27zm-136.978-374.979v-20.95c0-7.629 6.164-13.831 13.834-13.831h133.872c7.623 0 13.834 6.202 13.834 13.831v20.95c0 7.63-6.211 13.839-13.834 13.839h-133.872c-7.67 0-13.834-6.209-13.834-13.839zm87.711 201.52c0 11.24 1.459 22.139 4.141 32.539h-67.336v-46.52h18.963c3.859 0 6.964-3.131 6.964-6.999 0-3.86-3.106-7-6.964-7h-18.963v-35.12h43.808c3.859 0 6.964-3.13 6.964-7 0-3.871-3.106-7.001-6.964-7.001h-43.808v-35.129h18.963c3.859 0 6.964-3.131 6.964-7 0-3.86-3.106-6.999-6.964-6.999h-18.963v-47.451h112.462v71.869c-29.975 23.832-49.267 60.612-49.267 101.811zm366.984 186.28-85.311-85.321c-6.023-6.04-14.634-7.959-22.351-5.779l-22.022-22.029c14.258-20.852 22.586-46.041 22.586-73.151 0-71.651-58.301-129.95-129.919-129.95-24.375 0-47.196 6.74-66.677 18.449v-62.379c13.787-1.64 24.516-13.399 24.516-27.639v-20.951c0-15.35-12.47-27.829-27.81-27.829h-133.873c-15.387-.001-27.856 12.478-27.856 27.829v20.95c0 14.24 10.729 26 24.563 27.639v347.339c0 38.73 31.48 70.241 70.206 70.241s70.254-31.51 70.254-70.241v-61.948c19.481 11.71 42.302 18.451 66.677 18.451 27.104 0 52.278-8.351 73.124-22.611l22.022 22.03c-.565 2.011-.847 4.101-.847 6.25 0 6.091 2.353 11.81 6.635 16.1l85.311 85.321c4.47 4.43 10.305 6.65 16.093 6.65 5.835 0 11.67-2.221 16.14-6.65l18.54-18.57c4.282-4.29 6.682-10.01 6.682-16.1-.002-6.091-2.401-11.811-6.683-16.101zm-237.018-99.561c47.808 0 86.723-38.9 86.723-86.719 0-47.811-38.915-86.711-86.723-86.711s-86.723 38.9-86.723 86.711c.001 47.82 38.915 86.719 86.723 86.719zm0-187.429c-55.572 0-100.745 45.179-100.745 100.71 0 55.539 45.173 100.72 100.745 100.72 55.525 0 100.698-45.181 100.698-100.72.001-55.531-45.173-100.71-100.698-100.71z">
+                                    </path>
+                                </g>
+                            </svg>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-bolt fa-2x me-2 text-warning"></i>
-                            <span>Fast Reporting</span>
+                        <h5 class="fw-bold">Book Test</h5>
+                        <p class="text-muted small">Choose from our wide range of health packages. Select your preferred
+                            date and time slot. Complete booking in just a few clicks.</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step-circle mx-auto mb-3">
+                            <svg id="fi_17627470" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                                data-name="Layer 1">
+                                <g fill-rule="evenodd">
+                                    <path
+                                        d="m271.153 66.2a29.084 29.084 0 1 1 -20.553 35.639 29.079 29.079 0 0 1 20.553-35.639z"
+                                        fill="#faba7b"></path>
+                                    <path d="m419.82 362.157a54 54 0 1 1 0 76.388 53.978 53.978 0 0 1 0-76.388z"
+                                        fill="#3f5163"></path>
+                                    <path d="m120.905 357.645a55.732 55.732 0 1 1 0 78.8 55.714 55.714 0 0 1 0-78.8z"
+                                        fill="#3f5163"></path>
+                                    <path d="m136.683 373.394a33.439 33.439 0 1 1 0 47.3 33.44 33.44 0 0 1 0-47.3z"
+                                        fill="#d5e3f2"></path>
+                                    <path
+                                        d="m175.509 269.071h113.031v47.621h-136.827v-23.792a23.869 23.869 0 0 1 23.8-23.825z"
+                                        fill="#3f5163"></path>
+                                    <path
+                                        d="m86.562 404.461h252.3c28.509 0 46.873-24.63 59.691-47.247a131.822 131.822 0 0 0 14.139-36.24 49.188 49.188 0 0 0 .316-20.376l-20.864-104.725h-15.174l-7.817 12.243 19.485 97.138a23.747 23.747 0 0 1 -.144 10.259 106.975 106.975 0 0 1 -11.494 29.458c-7.73 13.622-20.778 34.688-38.136 34.688h-50.324v-85.269h-114.84c-45.7 0-76.044 37.792-82.97 82.97z"
+                                        fill="#fb4455"></path>
+                                    <path
+                                        d="m397.748 223.98-24-3.995a15.34 15.34 0 0 1 -2.328-.6l-2.27-11.265 7.817-12.243h15.174z"
+                                        fill="#e82e41"></path>
+                                    <path
+                                        d="m374.814 180.526 40.982-6.811a36.978 36.978 0 0 1 5.92-.661 24.055 24.055 0 1 1 0 48.109 36.952 36.952 0 0 1 -5.92-.632l-40.982-6.811a7.015 7.015 0 0 1 -5.891-6.955v-19.313a7.007 7.007 0 0 1 5.891-6.926z"
+                                        fill="#fb4455"></path>
+                                    <path
+                                        d="m420.481 173.111c.4-.028.833-.057 1.235-.057a24.055 24.055 0 1 1 0 48.109c-.4 0-.833 0-1.235-.029z"
+                                        fill="#ffab02"></path>
+                                    <path
+                                        d="m323.055 186.561h48.426a12.143 12.143 0 1 1 0 24.285h-53.455a12.233 12.233 0 0 1 -8.593-3.564l-33.395-33.423-17.617 65.726 56.156 11.926c6.783 1.438 12.444 6.007 16.123 11.9 3.65 5.833 3.736 12.76 3.621 19.657l-1.121 79.664h10.864a11.639 11.639 0 0 1 0 23.278h-23.193a11.688 11.688 0 0 1 -11.671-11.639c0-.92-.057-1.811-.057-2.73.459-25.463.919-61.013 1.379-86.447.029-1.638-.6-3.248-2.213-3.535l-88.2-15.261a18.443 18.443 0 0 1 -12.99-22.474l28.193-106.3a18.352 18.352 0 0 1 31.757-7.041z"
+                                        fill="#ffab02"></path>
+                                    <path
+                                        d="m258.421 239.585 56.156 11.926c6.783 1.438 12.444 6.007 16.123 11.9 3.65 5.833 3.736 12.76 3.621 19.657l-1.121 79.664h10.864a11.639 11.639 0 0 1 0 23.278h-23.193a11.688 11.688 0 0 1 -11.671-11.639c0-.92-.057-1.811-.057-2.73.459-25.463.919-61.013 1.379-86.447.029-1.638-.6-3.248-2.213-3.535l-88.2-15.261a18.443 18.443 0 0 1 -12.99-22.474l3.822-14.4z"
+                                        fill="#3f5163"></path>
+                                    <path
+                                        d="m333.2 362.732h10.864a11.639 11.639 0 0 1 0 23.278h-23.193a11.688 11.688 0 0 1 -11.671-11.639c0-.92-.057-1.811-.057-2.73.057-2.874.115-5.834.172-8.909z"
+                                        fill="#ffab02"></path>
+                                    <path
+                                        d="m269.2 58.9a36.685 36.685 0 0 1 44.891 25.922c2.241 8.421-36.068.029-39.373 7.415-4.339 9.742 24.084 33.222 12.99 36.211-19.571 5.231-39.171-5.115-44.43-24.658a36.671 36.671 0 0 1 25.922-44.89z"
+                                        fill="#fb4455"></path>
+                                </g>
+                                <path d="m72.997 151.011h115.502v115.502h-115.502z" fill="#faba7b"></path>
+                                <path d="m116.336 151.011h28.825v41.873h-28.825z" fill="#fb4455"></path>
+                                <path d="m434.362 376.7a33.439 33.439 0 1 1 0 47.3 33.44 33.44 0 0 1 0-47.3z"
+                                    fill="#d5e3f2" fill-rule="evenodd"></path>
+                                <path d="m485.2 329.365-98.2 98.173c-28.423-62.047 36.153-126.624 98.2-98.173z"
+                                    fill="#fb4455" fill-rule="evenodd"></path>
+                                <path
+                                    d="m188.499 255.018h-106.305v-11.783-14.169-13.219-14.169-13.22-14.197-23.25h-9.197v23.25 14.197 13.22 14.169 13.219 14.169 23.278h115.502z"
+                                    fill="#f5ad65" fill-rule="evenodd"></path>
+                                <path
+                                    d="m217.813 230.992 24.744-93.373a18.135 18.135 0 0 1 14.169-13.22 18.328 18.328 0 0 0 -21.411 13.22l-24.371 91.907z"
+                                    fill="#ed9e00" fill-rule="evenodd"></path>
+                                <path
+                                    d="m252.53 103.793a36.642 36.642 0 0 1 25.922-44.893 35.925 35.925 0 0 1 4.886-.949 36.649 36.649 0 0 0 -40.062 45.839 34.6 34.6 0 0 0 16.956 21.669c.661.374 1.322.69 2.012 1.006a36.738 36.738 0 0 0 19.944 3.047 34.783 34.783 0 0 1 -25.721-16.439 35.812 35.812 0 0 1 -3.937-9.283z"
+                                    fill="#e82e41" fill-rule="evenodd"></path>
+                                <path
+                                    d="m114.3 341.292a99.363 99.363 0 0 1 9.4-13.191 83.088 83.088 0 0 1 15.461-14.2 72.977 72.977 0 0 1 12.559-7.127 74.843 74.843 0 0 1 30.9-6.467h105.92v-5.92h-114.84a76.674 76.674 0 0 0 -21.986 3.133 75.6 75.6 0 0 0 -28.914 16.38 88.062 88.062 0 0 0 -12.674 14.2 103.223 103.223 0 0 0 -7.99 13.191 117.785 117.785 0 0 0 -6.035 14.2 126.324 126.324 0 0 0 -3.736 13.192c-.661 2.874-1.207 5.747-1.638 8.679l-.862 5.518-3.305 21.583h9.829l3.247-21.181a2.223 2.223 0 0 1 .058-.4 121.93 121.93 0 0 1 3.075-14.2 118.818 118.818 0 0 1 4.483-13.192 112.49 112.49 0 0 1 7.041-14.2z"
+                                    fill="#e82e41" fill-rule="evenodd"></path>
+                                <path
+                                    d="m377 344.971c-5 8.794-12.214 20.692-21.381 28.02a11.212 11.212 0 0 1 .086 1.38 11.7 11.7 0 0 1 -8.507 11.208h.575c17.358 0 30.406-21.066 38.137-34.659a107.721 107.721 0 0 0 11.5-29.458 23.747 23.747 0 0 0 .144-10.259l-19.428-96.937-3.305-.546a7.109 7.109 0 0 1 -4.627-2.874h-.494l18.939 94.408a23.747 23.747 0 0 1 -.144 10.259 106.975 106.975 0 0 1 -11.495 29.458z"
+                                    fill="#e82e41" fill-rule="evenodd"></path>
+                                <path d="m317.739 385.579a11.763 11.763 0 0 1 -7.243-5.92h-21.956v5.92z" fill="#e82e41"
+                                    fill-rule="evenodd"></path>
+                                <path
+                                    d="m50.667 382.878a7.1 7.1 0 1 1 0-14.2h1.782a7.1 7.1 0 0 1 0 14.2zm20.548-54.778a7.1 7.1 0 0 1 0-14.2h70.325a7.1 7.1 0 0 1 0 14.2zm-35 27.388a7.1 7.1 0 0 1 0-14.2h1.811a7.1 7.1 0 0 1 0 14.2zm19.629 0a7.1 7.1 0 1 1 0-14.2h102.479a7.1 7.1 0 1 1 0 14.2zm14.427 27.389a7.1 7.1 0 1 1 0-14.2h59.289a7.1 7.1 0 0 1 0 14.2z"
+                                    fill="#3f5163"></path>
+                                <path
+                                    d="m7.1 215.847a7.085 7.085 0 1 1 0-14.169h1.81a7.085 7.085 0 1 1 0 14.169zm25.577-27.389a7.1 7.1 0 0 1 0-14.2h59.288a7.1 7.1 0 0 1 0 14.2zm7.472 54.777a7.085 7.085 0 1 1 0-14.169h49.258a7.085 7.085 0 1 1 0 14.169zm-13.449-27.388a7.085 7.085 0 0 1 0-14.169h79.52a7.085 7.085 0 1 1 0 14.169z"
+                                    fill="#3f5163"></path>
+                                <path
+                                    d="m318 362.732h-8.679c-.057 3.075-.115 6.035-.172 8.909 0 .919.057 1.81.057 2.73a11.42 11.42 0 0 0 1.293 5.288 11.763 11.763 0 0 0 7.243 5.92 11.159 11.159 0 0 0 3.132.431h23.193a11.308 11.308 0 0 0 3.132-.431 11.726 11.726 0 0 0 6.926-5.374 9.529 9.529 0 0 1 -1.293.086h-23.195a11.947 11.947 0 0 1 -3.794-.632 11.763 11.763 0 0 1 -7.843-11.036c0-.891-.086-1.81-.057-2.73 0-1.035.029-2.1.057-3.161z"
+                                    fill="#ed9e00" fill-rule="evenodd"></path>
+                                <path
+                                    d="m309.318 362.732h8.682c.431-25.176.862-58.858 1.294-83.286.028-1.61-.6-3.248-2.185-3.535l-28.569-4.911-11.007-1.926-48.627-8.421a18.392 18.392 0 0 1 -12.99-22.473l1.9-7.185-6.869-1.466-3.822 14.4a18.443 18.443 0 0 0 12.99 22.474l15.548 2.673 52.88 9.168 19.772 3.42c1.61.287 2.242 1.9 2.213 3.535-.4 22.589-.8 53.138-1.207 77.538z"
+                                    fill="#2c3947" fill-rule="evenodd"></path>
+                                <path
+                                    d="m311.272 200.442-33.394-33.423-1.84 6.84 33.395 33.423a12.233 12.233 0 0 0 8.593 3.564h53.455a12.161 12.161 0 0 0 12.156-12.157 1.882 1.882 0 0 0 -.029-.4 12.122 12.122 0 0 1 -10.288 5.719h-53.455a12.235 12.235 0 0 1 -8.593-3.564z"
+                                    fill="#ed9e00" fill-rule="evenodd"></path>
+                                <path
+                                    d="m158.726 295.8a23.87 23.87 0 0 1 23.566-20.491h89.32l-35.952-6.236h-60.151a23.869 23.869 0 0 0 -23.8 23.825v4.627a69.364 69.364 0 0 1 7.013-1.725z"
+                                    fill="#2c3947" fill-rule="evenodd"></path>
+                                <path
+                                    d="m396.11 418.456c-14.312-48.4 24.715-95.068 71.733-94.694-22.905-4.426-44.92 2.73-61.186 16.611a75.614 75.614 0 0 0 -25.032 41.643 72.447 72.447 0 0 0 5.375 45.522z"
+                                    fill="#e82e41" fill-rule="evenodd"></path>
+                                <path
+                                    d="m432.436 438.545a54.008 54.008 0 0 1 -15.749-40.694l-11.869 11.9a54 54 0 0 0 59.49 44.229 53.694 53.694 0 0 1 -31.872-15.433z"
+                                    fill="#2c3947" fill-rule="evenodd"></path>
+                                <path
+                                    d="m135.016 436.447a55.5 55.5 0 0 1 -15.835-31.986h-14.111a55.776 55.776 0 0 0 62.306 47.879 55.3 55.3 0 0 1 -32.36-15.893z"
+                                    fill="#2c3947" fill-rule="evenodd"></path>
+                                <path
+                                    d="m375.447 187.222 40.753-6.782c1.437-.23 2.846-.46 4.283-.575v-6.754a42.951 42.951 0 0 0 -4.685.6l-40.982 6.811a6.98 6.98 0 0 0 -5.834 6.035h2.5a12.093 12.093 0 0 1 3.966.661z"
+                                    fill="#e82e41" fill-rule="evenodd"></path>
+                                <path
+                                    d="m422.147 179.779a24.1 24.1 0 0 1 23.566 19.169c.029-.6.058-1.207.058-1.839a24.064 24.064 0 0 0 -24.055-24.055c-.4 0-.833.029-1.235.057v6.754a16.307 16.307 0 0 1 1.666-.086z"
+                                    fill="#ed9e00" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Home Collection</h5>
+                        <p class="text-muted small">Our certified phlebotomist visits your home. Free sample collection
+                            at your convenience. Hygienic and safe procedure guaranteed.</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step-circle mx-auto mb-3">
+                            <svg id="fi_6401547" enable-background="new 0 0 72 72" height="512" viewBox="0 0 72 72"
+                                width="512" xmlns="http://www.w3.org/2000/svg">
+                                <g id="_x38_6">
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m52.0283737 25.2688389h-3.0555305l-3.2176781-16.5574417 3.2627907-.9281712c1.9558601-.5589271 3.9657936.7208834 4.281292 2.7308207l1.7600441 11.2109137c.2922248 1.8613681-1.1467515 3.5438785-3.0309182 3.5438785z"
+                                                fill="#333077"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m70.095932 68h-28.5632362l-1.2157669-18.5726891c-.2073784-1.9380379-.7365875-5.7496872-.4076424-9.6901894.371891-4.4697113 2.9893341-8.345787 6.7939568-10.4556293.9440079-.5292072 1.9523544-.9438763 3.0250854-1.2300434l4.3338737-1.1584568c.0071144-.0071602.0142708-.0071602.0142708-.0071602l1.7163849-.4577942c3.5042267-.7795811 8.3172417-1.59478 10.1337166 1.4947319 1.0226593 1.7377758 1.766449 7.1157436 2.3528366 13.5950756.8081284 8.968052 1.3087464 20.0457726 1.8165207 26.4821549z"
+                                                fill="#78d7a6"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m47.1093712 30.1447086s-2.6724243 5.6942196-3.0453033 7.7398701c-1.3502312 7.4075661.4293746 30.1154213.4293746 30.1154213h-2.9607468l-1.2157669-18.5726891c-.2073784-1.9380379-.7365875-5.7496872-.4076424-9.6901894.371891-4.4697113 2.9893341-8.345787 6.7939568-10.4556293z"
+                                                fill="#edf5fc"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m70.095932 68h-18.2538071c-1.4875336-9.5903206-4.0446777-35.6934242-3.9445877-37.0736198.1144485-1.6377296 5.8070869-3.8975525 6.1646652-4.0333881.0071144-.0071602.0142708-.0071602.0142708-.0071602l1.7163849-.4577942c3.5042267-.7795811 8.3172417-1.59478 10.1337166 1.4947319 1.0226593 1.7377758 1.766449 7.1157436 2.3528366 13.5950756.8081284 8.9680519 1.3087464 20.0457725 1.8165207 26.4821548z"
+                                                fill="#edf5fc"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m70.095932 68h-3.5114288c-.1358795-.5292053-.2073822-1.0870438-.2574463-1.6162567-.2002182-2.2098846-.1287231-4.441246-.4648209-6.6366425-.3361511-2.1955719-1.1371155-4.4124413-2.7748032-5.9071732-2.2956581-2.1025124-5.678318-2.3672028-8.7892647-2.5245132-3.3540688 0-6.5579453-.2790108-9.8691063.4862556 4.2766037-2.088192 8.3887367-4.6127052 12.5509338-6.9154816 2.4816055-1.3658791 5.0203896-2.7532349 7.8095093-3.2754555 1.1370697-.2145844 2.3385239-.2573586 3.4899063-.0928879.8081285 8.9680521 1.3087465 20.0457727 1.8165208 26.482155z"
+                                                fill="#c7dafa"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m47.948307 56.8199883h-44.9814608c-.5869548 0-1.0627759-.4758224-1.0627759-1.0627747v-4.0740509c0-.586956.475821-1.0627785 1.0627759-1.0627785h44.9814608c.586956 0 1.0627747.4758224 1.0627747 1.0627785v4.0740509c0 .5869522-.4758186 1.0627747-1.0627747 1.0627747z"
+                                                fill="#387094"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="m3.78 56.822h43.36v11.178h-43.36z" fill="#387094"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path d="m3.781 56.819h43.357v1.044h-43.357z" fill="#315a79"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path d="m29.371 21.677h2.193v10.863h-2.193z" fill="#424357"
+                                                    transform="matrix(.809 .588 -.588 .809 21.757 -12.732)"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="m26.663 24.461h3.695v10.679h-3.695z" fill="#e6ecec"
+                                                    transform="matrix(.809 .588 -.588 .809 22.966 -11.068)"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="m23.471 33.858h2.193v2.74h-2.193z" fill="#dce0e3"
+                                                    transform="matrix(.809 .588 -.588 .809 25.403 -7.712)"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="m32.201 21.592h3.433v1.538h-3.433z" fill="#e6ecec"
+                                                    transform="matrix(.809 .588 -.588 .809 19.626 -15.667)"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <path
+                                                        d="m28.0124531 44.9654427-10.8883839-8.2299652c-.3693619-.279274-.4426613-.8054695-.1633873-1.1748314.2792721-.3697701.8046513-.4430695 1.1748314-.1633873l10.8728237 8.2184982c1.3140583.9467468 3.1219654.8005562 4.2816448-.3587151 1.2972679-1.2976799 1.2972679-3.4090157 0-4.7062874l-5.1759758-5.1759758c-.3275928-.3275909-.3275928-.8582954 0-1.1858864.3275948-.3275948.8582954-.3275948 1.1858883 0l5.1759739 5.1759758c1.9512291 1.9512253 1.9512291 5.1264267 0 7.078064-1.749218 1.749218-4.4678802 1.9591103-6.4634151.5225106z"
+                                                        fill="#424357"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <circle cx="22.749" cy="42.915" fill="#424357" r="3.075"></circle>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="m22.068 45.07h1.747v2.702h-1.747z" fill="#424357"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m29.3009872 50.6203842h-17.0872697v-1.2055435l9.8540086-1.642334h1.7471638l5.4860973 1.642334z"
+                                                    fill="#424357"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <circle cx="28.218" cy="32.712" fill="#424357" r="2.567"></circle>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m54.0764732 26.8858318-5.3472748 3.7431393c-.9211121.6447849-2.2031822.1946926-2.519104-.8843727l-.3721581-1.2711468-2.2241631-7.5520611 6.7653694-2.6317177.6579285-.2575302z"
+                                                    fill="#f9c4c0"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m51.0513878 21.4505959c0 3.0250854-1.8808556 5.8642235-4.8988266 6.9297962-.1072464.0357914-.2073784.0715847-.3146248.0930595l-2.2241631-7.5520611 6.7653694-2.6317177.2502861.7008381c.2860795.815197.421959 1.644888.421959 2.460085z"
+                                                    fill="#fd9997"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m51.2802429 19.8987694c0 3.0250854-1.8808556 5.8642235-4.8988266 6.9297943-3.8332138 1.3588982-8.0383186-.6507263-9.3899689-4.4768677l-1.5375557-4.3338718c-1.3516502-3.8331242.6507721-8.0383177 4.4840279-9.3898812 3.83321-1.3587217 8.0311584.6507273 9.3899231 4.4840269l1.5304413 4.326539c.2860794.8153726.4219589 1.644888.4219589 2.4602605z"
+                                                    fill="#f9c4c0"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m38.7805862 23.1356525c.4382744 1.2038383 1.5492249 1.9539795 2.63908 1.7060032 1.089859-.2479763 1.7669182-1.4049473 1.6411896-2.6799011z"
+                                                    fill="#fff"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m42.4741516 17.2579327c.1810913.547327-.002449 1.097805-.4144554 1.2341232-.4061127.1343708-.8817596-.1980038-1.0628548-.7453308-.179142-.5414352.0044022-1.0919132.4105148-1.2262821.4120026-.1363182.8876534.1960544 1.0667954.7374897z"
+                                                    fill="#424357"></path>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="m37.8930702 18.6331673c.1600838.4838276-.0021667.9704418-.3663712 1.0909443-.3589973.1187801-.7794647-.1750317-.9395485-.6588593-.1583595-.4786205.003891-.9652348.3628883-1.0840149.3642045-.1205044.7846719.1733093.9430314.6519299z"
+                                                    fill="#424357"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m49.0847588 7.3596377 1.6498451 3.9961476-14.9042892 5.4000149c-2.8812828 1.1895657-6.1813602-.1818466-7.3709259-3.0631323l-.0000019-.0000086c-.7725124-1.8711252.1180916-4.0142155 1.9892159-4.786727l13.1404552-4.6718006c1.9842986-.8192355 4.4448089.5801011 5.4957008 3.125506z"
+                                                fill="#333077"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m51.8588142 14.4640007c.3745766 1.0585184-.1651649 2.212965-1.2236404 2.5875263l-1.3503036-3.815836c1.0584754-.3745612 2.2041435.1832877 2.573944 1.2283097z"
+                                                fill="#f9c4c0"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m48.8045998 11.5934572 1.6474037 4.8039122-.0979347.0335846c-.695858.2386322-1.4503517-.130579-1.6871796-.8211851l-1.2178917-3.5514345z"
+                                                fill="#333077"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m57.5401726 30.5256481c-.4882278-2.2823772 1.0777359-4.4948349 3.392601-4.7931995h.0000038c3.2118073-.4139729 6.1141815 1.9496384 6.3591766 5.1787357l2.2472687 13.5579662c.5338974 3.221035-1.9505997 6.1512337-5.2155762 6.1512337h-27.8052482l.6800079-7.1448631 22.6978188-1.9357567z"
+                                                fill="#edf5fc"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m39.8143349 43.2524529c1.6650391-.2412109 3.3310547-.470459 5.0012207-.6525879 1.6694336-.1890869 3.3378906-.3912354 5.0112305-.5361328l5.0175781-.463501 5.0244141-.3807373-.2868653.3874511c-.2834473-1.427002-.5327148-2.8613281-.8007813-4.291626-.2553711-1.4331055-.4968262-2.8690186-.7106934-4.3109131.3945313 1.4031982.7617188 2.8122559 1.1149902 4.2243652.3405762 1.4147949.6999512 2.8255615 1.0251465 4.2436523l.0808105.3526611-.3679199.0349121-5.0163574.475708-5.0236816.3927002c-1.673584.140625-3.3520508.223999-5.029541.3201904-1.6770019.1033938-3.357666.1595461-5.0395507.2038577z"
+                                                fill="#c7dafa"></path>
+                                        </g>
+                                    </g>
+                                    <g>
+                                        <g>
+                                            <path
+                                                d="m37.1988678 43.4773598-.6794052 7.1443748h-7.3374806c-1.5447121 0-2.7819576-1.272995-2.7390499-2.8176613.0214767-.6723785.2860794-1.2873116.7080383-1.7594261.421917-.4647789 1.0083485-.7865639 1.6734352-.8796234l5.9071732-.7794075-1.0155029-.6652184c-.4076424-.2716751-.5721169-.7865639-.400486-1.2515182.1573143-.4289856.5649567-.6865196.9869156-.6865196.200222 0 .400486.0572701.5792732.1718063z"
+                                                fill="#f9c4c0"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Lab Analysis</h5>
+                        <p class="text-muted small">Samples analyzed in NABL certified laboratories. Advanced equipment
+                            ensures accurate results. Quality checked by expert pathologists.</p>
+                    </div>
+                    <div class="steps">
+                        <div class="step-circle mx-auto mb-3">
+                            <svg id="fi_4434338" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512"
+                                width="512" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-rule="evenodd" fill-rule="evenodd">
+                                    <g>
+                                        <path
+                                            d="m313.935 420.087c-38.042 0-78.969 0-116.956 0 2.55 22.133.233 48.047-4.546 69.723h126.717c-5.085-21.676-7.764-47.59-5.215-69.723z"
+                                            fill="#656565"></path>
+                                        <path
+                                            d="m145.552 502c-6.732 0-12.19-5.458-12.19-12.19s5.458-12.19 12.19-12.19h220.48c6.732 0 12.19 5.458 12.19 12.19s-5.458 12.19-12.19 12.19z"
+                                            fill="#515151"></path>
+                                        <path
+                                            d="m495.905 385.642c0 19.024-15.421 34.445-34.446 34.445h-410.918c-19.025 0-34.445-15.421-34.445-34.445 0-93.538 0-187.076 0-280.614 0-16.114 13.143-29.257 29.257-29.257h421.296c16.114 0 29.257 13.143 29.257 29.257-.001 93.538-.001 187.076-.001 280.614z"
+                                            fill="#6a676b"></path>
+                                        <path
+                                            d="m474.45 330.116v-225.088c0-4.272-3.53-7.802-7.802-7.802-140.432 0-280.864 0-421.296 0-4.272 0-7.802 3.531-7.802 7.802v225.088z"
+                                            fill="#92d2fe"></path>
+                                        <path
+                                            d="m50.541 420.087h146.438 116.956 147.524c19.025 0 34.446-15.421 34.446-34.445 0 0 0-13.267 0-34.071h-479.81v34.071c0 19.024 15.421 34.445 34.446 34.445z"
+                                            fill="#e6e6e6"></path>
+                                    </g>
+                                    <g>
+                                        <path
+                                            d="m147.295 10h173.671c1.625 0 3.023.579 4.171 1.728l43.739 43.739c1.149 1.149 1.728 2.547 1.728 4.171v234.709c0 3.249-2.65 5.899-5.899 5.899h-217.41c-3.249 0-5.899-2.65-5.899-5.899v-278.448c0-3.249 2.65-5.899 5.899-5.899z"
+                                            fill="#f2f2f2"></path>
+                                        <path
+                                            d="m323.41 10.511c.626.286 1.203.692 1.728 1.216l43.739 43.739c.525.524.93 1.101 1.217 1.728h-43.734c-1.625 0-2.95-1.325-2.95-2.95z"
+                                            fill="#ccc"></path>
+                                        <path
+                                            d="m315.027 180.121c4.334 0 7.85 3.515 7.85 7.849s-3.515 7.85-7.85 7.85h-118.054c-4.335 0-7.85-3.515-7.85-7.85 0-4.334 3.515-7.849 7.85-7.849zm0 71.811c4.334 0 7.85 3.515 7.85 7.849s-3.515 7.85-7.85 7.85h-118.054c-4.335 0-7.85-3.515-7.85-7.85 0-4.334 3.515-7.849 7.85-7.849zm0-35.906c4.334 0 7.85 3.515 7.85 7.85 0 4.334-3.515 7.85-7.85 7.85h-118.054c-4.335 0-7.85-3.515-7.85-7.85s3.515-7.85 7.85-7.85z"
+                                            fill="#ccc"></path>
+                                        <path
+                                            d="m242.458 59.641h27.085c1.625 0 2.95 1.325 2.95 2.949v21.854h21.854c1.625 0 2.95 1.325 2.95 2.949v27.085c0 1.625-1.325 2.95-2.95 2.95h-21.854v21.854c0 1.624-1.325 2.949-2.95 2.949h-27.085c-1.625 0-2.95-1.325-2.95-2.949v-21.854h-21.854c-1.624 0-2.949-1.325-2.949-2.95v-27.084c0-1.624 1.325-2.949 2.949-2.949h21.854v-21.854c0-1.625 1.325-2.95 2.95-2.95z"
+                                            fill="#eb745e"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <h5 class="fw-bold">Online Report</h5>
+                        <p class="text-muted small">Receive digital reports within 6-12 hours. Download via Email,
+                            WhatsApp, or our App. Easy access to your health records anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Tests -->
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>What We Do</h6>
+                <h2>Our Diagnostic Tests</h2>
+            </div>
+            <div class="swiper servicesSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">CBP (Complete Blood Picture)</h5>
+                                <p>
+                                    Price : ₹339
+                                </p>
+                                <!-- <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">CRP (C-Reactive Protein)</h5>
+                                <p>
+                                    Price : ₹401
+                                </p>
+                                <!-- <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">LFT (Liver Function Test)</h5>
+                                <p>
+                                    Price : ₹401
+                                </p>
+                                <!-- <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">RFT (Renal Function Test)</h5>
+                                <p>
+                                    Price : ₹413
+                                </p>
+                                <!-- <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Lipid Profile</h5>
+                                <p>
+                                    Price : ₹432
+                                </p>
+                                <!-- <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Thyroid Profile</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#thyroid">
+                                    View Tests
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Glucose Profile</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#glucose">
+                                    View Tests
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Kidney & Urine</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#kideny">
+                                    View Tests
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Hormones</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#hormones">
+                                    View Tests
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Cardiac Markers</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#cardiac">
+                                    View Tests
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Infectious Markers</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#infectious">
+                                    View Tests
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Nutritional / Deficiency</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#nutritional">
+                                    View Tests
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Tumor Markers</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#tumor">
+                                    View Tests
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Rheumatology / Autoimmune</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#rheumatology">
+                                    View Tests
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="custom-card p-4 service-card">
+                            <div class="service-card-front">
+                                <h5 class="text-center mb-3 text-white">Other Specialized Tests</h5>
+                                <button type="button" class="btn" data-bs-toggle="modal"
+                                    data-bs-target="#others">
+                                    View Tests
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="assits/images/why_choose.webp" class="img-fluid rounded-4 shadow" alt="Lab Doctor">
+                </div>
+                <div class="col-lg-6 px-5 px-lg-0 ps-lg-5">
+                    <div class="ms-lg-5">
+                        <h6 class="text-primary fw-bold text-uppercase mb-2">Why Choose Vansh Labs</h6>
+                        <h2 class="fw-bold mb-4">Precision You Can Trust</h2>
+
+                        <div class="d-flex mb-4">
+                            <div class="me-3"><i class="fas fa-bullseye fa-2x text-primary"></i></div>
+                            <div>
+                                <h5>100% Accuracy</h5>
+                                <p class="text-muted small">Automated analyzers and NABL certified processes ensure zero
+                                    error.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="me-3"><i class="fas fa-bolt fa-2x text-primary"></i></div>
+                            <div>
+                                <h5>Fastest Reporting</h5>
+                                <p class="text-muted small">Get digital reports on WhatsApp and Email in record time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-3"><i class="fas fa-wallet fa-2x text-primary"></i></div>
+                            <div>
+                                <h5>Affordable Pricing</h5>
+                                <p class="text-muted small">Save up to 50% on market prices with our special packages.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- <section id="doctors" class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h6>Team</h6>
+                <h2>Meet Our Experts</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Rajesh Kumar</h5>
+                        <p class="text-primary small fw-bold">MD, Pathology</p>
+                        <p class="text-muted small">15+ Years Experience in Clinical Pathology and Diagnostics.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Anita Desai</h5>
+                        <p class="text-primary small fw-bold">PhD, Microbiology</p>
+                        <p class="text-muted small">Expert in Infectious Diseases and Molecular Biology.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/hospital-healthcare-workers-covid-19-treatment-concept-young-doctor-scrubs-making-daily-errands-clinic-listening-patient-symptoms-look-camera-professional-physician-cure-diseases_1258-57233.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Sameer Khan</h5>
+                        <p class="text-primary small fw-bold">Senior Biochemist</p>
+                        <p class="text-muted small">10+ Years ensuring accuracy in biochemical analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="packages" class="section-padding" style="background-color:rgba(var(--primary), 0.7);">
+        <div class="container">
+            <div class="section-header">
+                <h6 style="color: rgba(var(--primary-dark), 1);font-size: 20px;
+        font-weight: 700">Affordable Health</h6>
+                <h2 style="color: rgb(var(--white-bg));">Popular Packages</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center">
+                        <h4 class="fw-bold mb-3">Basic Wellness</h4>
+                        <div class="price-tag mb-3">₹799</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Complete Hemogram</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Diabetes Screen (Fast)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lipid Profile</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Kidney Function Test</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center border border-2 border-info position-relative">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <h4 class="fw-bold mb-3">Full Body Checkup</h4>
+                        <div class="price-tag mb-3">₹1499</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Includes Basic Wellness</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Liver Function Test</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Thyroid Profile (T3, T4, TSH)
+                            </li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vitamin D & B12</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-nav w-100">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center">
+                        <h4 class="fw-bold mb-3">Senior Citizen Care</h4>
+                        <div class="price-tag mb-3">₹2999</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Includes Full Body Checkup
+                            </li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cardiac Risk Markers</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>HbA1c (3 Month Sugar)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Iron Profile</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Testimonials</h6>
+                <h2>What Patients Say</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="custom-card p-4">
+                        <div class="mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted fst-italic">"The home collection was extremely convenient. The phlebotomist
+                            was on time and very hygienic. Got my reports on WhatsApp the same evening!"</p>
+                        <h6 class="fw-bold mt-3">- Rahul Verma</h6>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card p-4">
+                        <div class="mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-muted fst-italic">"I booked the Full Body Checkup for my parents. Vansh Labs
+                            offers the best prices and their report quality is top-notch. Highly recommended."</p>
+                        <h6 class="fw-bold mt-3">- Priya Sharma</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h6>FAQ</h6>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is home collection free?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Yes, home sample collection is absolutely free for all orders above ₹500.
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="booking-card text-start">
-                        <h3 class="fw-bold text-center mb-4" style="color: var(--primary-blue);">Quick Booking</h3>
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            When will I get my report?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Most routine test reports are delivered digitally within 6-12 hours of sample collection.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                            Do I need to fast before the test?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            It depends on the test. For Fasting Blood Sugar and Lipid Profile, 10-12 hours of fasting is
+                            required. Our team will guide you during booking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Locations</h6>
+                <h2>Our Branches</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Hyderabad (Main)</h5>
+                    <p class="text-muted small">Plot 123, Health City, Madhapur, Hyderabad, Telangana 500081.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Bangalore</h5>
+                    <p class="text-muted small">45, 1st Main Rd, Indiranagar, Bangalore, Karnataka 560038.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Mumbai</h5>
+                    <p class="text-muted small">Shop 10, Green Park, Andheri West, Mumbai, Maharashtra 400053.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Contact Us</h6>
+                <h2>Book Your Appointment</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="custom-card p-5">
                         <form>
                             <div class="mb-3">
-                                <label class="form-label small text-muted">Patient Name</label>
-                                <input type="text" class="form-control" required>
+                                <label class="form-label fw-bold">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Full Name" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label small text-muted">Mobile Number</label>
-                                <input type="tel" class="form-control" required>
+                                <label class="form-label fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+91 9876543210" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label small text-muted">Select Service</label>
+                                <label class="form-label fw-bold">Address</label>
+                                <input type="text" class="form-control" placeholder="Address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Select Test</label>
                                 <select class="form-select">
-                                    <option selected disabled>Choose...</option>
-                                    <option value="1">Blood Test / Pathology</option>
-                                    <option value="2">MRI Scan</option>
-                                    <option value="3">CT Scan</option>
-                                    <option value="4">Ultrasound</option>
-                                    <option value="5">Full Body Checkup</option>
+                                    <option>Full Body Checkup</option>
+                                    <option>Basic Wellness</option>
+                                    <option>Senior Citizen Care</option>
+                                    <option>Others</option>
                                 </select>
                             </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg py-3" style="background-color: var(--primary-blue); border:none;">Schedule Now</button>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Preferred Date</label>
+                                <input type="datetime-local" class="form-control">
                             </div>
+                            <button type="submit" class="btn btn-nav w-100 py-2 mt-2">Confirm Booking</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">Our Diagnostic Services</h2>
-            <p class="text-center text-muted mb-5">Comprehensive imaging and pathology services. Click to view more.</p>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-flask"></i> 
-                        </div>
-                        <div class="service-content">
-                            <h4>Pathology Lab</h4>
-                            <p class="text-muted small">Blood, Urine & Biochemistry.</p>
-                            <div class="service-price">Starts @ ₹299</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=pathology" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-ring"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>MRI Scan (3T)</h4>
-                            <p class="text-muted small">High-def brain, spine & joint scans.</p>
-                            <div class="service-price">Starts @ ₹3,500</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=mri" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-procedures"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Multislice CT Scan</h4>
-                            <p class="text-muted small">Rapid imaging for chest & abdomen.</p>
-                            <div class="service-price">Starts @ ₹2,000</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=ctscan" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Ultrasound / USG</h4>
-                            <p class="text-muted small">Pregnancy, abdominal & doppler.</p>
-                            <div class="service-price">Starts @ ₹800</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=ultrasound" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-x-ray"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Digital X-Ray</h4>
-                            <p class="text-muted small">Low radiation, instant reports.</p>
-                            <div class="service-price">Starts @ ₹400</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=xray" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Cardiology (ECG)</h4>
-                            <p class="text-muted small">Heart health & 2D Echo.</p>
-                            <div class="service-price">Starts @ ₹300</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=cardiology" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-motorcycle"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Home Collection</h4>
-                            <p class="text-muted small">Sample collection at your doorstep.</p>
-                            <div class="service-price">Free (Orders > ₹500)</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=homecollect" class="btn btn-sm btn-outline-primary rounded-pill w-100">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-6 col-lg-3">
-                    <div class="service-box">
-                        <div class="service-graphic">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <div class="service-content">
-                            <h4>Doctor Consult</h4>
-                            <p class="text-muted small">Report analysis with experts.</p>
-                            <div class="service-price">Starts @ ₹500</div>
-                            <div class="service-btn-container">
-                                <a href="service-details.html?id=consultation" class="btn btn-sm btn-outline-primary rounded-pill w-100">View Details</a>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="map-container">
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.487709981056!2d78.3588337741413!3d17.38836700277893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9588dd808581%3A0xcb4ea05b1e8e8914!2sVansh%20Clinics%20%7C%20Narsingi%20Clinic%20for%20General%20Physician%20Services%2C%20PCOD%2C%20Periods%2C%20Cysts%2C%20Thyroid%20%26%20Breast%20Health!5e0!3m2!1sen!2sin!4v1768238932543!5m2!1sen!2sin" width="600" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="packages" class="bg-light-blue">
-        <div class="container">
-            <h2 class="section-title">Popular Health Packages</h2>
-            <p class="text-center text-muted mb-5">Preventive health checkups curated for different needs at affordable prices.</p>
-
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card h-100">
-                        <div class="package-header">
-                            <h4>Basic Health Check</h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="price mb-3">₹1499 <small class="text-muted fs-6">/ person</small></div>
-                            <ul class="list-group list-group-flush text-start mb-4">
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Complete Blood Count (CBC)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Fasting Blood Sugar</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Lipid Profile (Cholesterol)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Liver Function Test (Basic)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Kidney Function Test (Basic)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Urine Routine</li>
-                            </ul>
-                            <a href="#hero" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 col-md-6">
-                    <div class="card package-card h-100 border-primary border-2">
-                        <div class="package-header bg-primary">
-                            <h4>Vansh Executive Body <span class="badge bg-warning text-dark ms-2">Best Value</span></h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="price mb-3">₹3499 <small class="text-muted fs-6">/ person</small></div>
-                            <ul class="list-group list-group-flush text-start mb-4">
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>All Basic Tests Included</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Thyroid Profile (T3, T4, TSH)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>HbA1c (3-month sugar)</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>ECG & Chest X-Ray</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Vitamin D & B12 Levels</li>
-                            </ul>
-                            <a href="#hero" class="btn btn-primary rounded-pill w-100">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 col-md-6">
-                    <div class="card package-card h-100">
-                        <div class="package-header">
-                            <h4>Comprehensive Plus</h4>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="price mb-3">₹5999 <small class="text-muted fs-6">/ person</small></div>
-                            <ul class="list-group list-group-flush text-start mb-4">
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>All Executive Tests Included</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Cardiac Markers</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>Ultrasound Abdomen</li>
-                                <li class="list-group-item"><i class="fas fa-check text-success me-2"></i>PSA (for men) / Pap Smear (for women)</li>
-                            </ul>
-                            <a href="#hero" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-             <div class="row align-items-center">
-                 <div class="col-lg-6 mb-4 mb-lg-0">
-                     <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070&auto=format&fit=crop" alt="Vansh Labs Professional Team" class="img-fluid rounded-4 shadow">
-                 </div>
-                 <div class="col-lg-6 ps-lg-5">
-                     <h2 class="section-title text-start mx-0">Why Choose Vansh Labs?</h2>
-                     <p class="lead">We are committed to providing accurate, timely, and affordable diagnostic services.</p>
-                     <p>At Vansh Labs, we have established a center of excellence equipped with the latest technology from global leaders. Our team of experienced radiologists and pathologists ensure every report is precise and reliable for your peace of mind.</p>
-                     
-                     <div class="row mt-4">
-                         <div class="col-6 mb-4">
-                             <div class="d-flex align-items-center">
-                                 <i class="fas fa-microscope fa-2x text-primary me-3"></i>
-                                 <div>
-                                     <h5 class="mb-0 fw-bold">Latest Tech</h5>
-                                     <small>State-of-the-art equipment</small>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-6 mb-4">
-                             <div class="d-flex align-items-center">
-                                 <i class="fas fa-user-md fa-2x text-primary me-3"></i>
-                                 <div>
-                                     <h5 class="mb-0 fw-bold">Expert Team</h5>
-                                     <small>Qualified Specialists</small>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-6 mb-4">
-                             <div class="d-flex align-items-center">
-                                 <i class="fas fa-clock fa-2x text-primary me-3"></i>
-                                 <div>
-                                     <h5 class="mb-0 fw-bold">Timely Reports</h5>
-                                     <small>Quick turnaround time</small>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="col-6 mb-4">
-                             <div class="d-flex align-items-center">
-                                 <i class="fas fa-rupee-sign fa-2x text-primary me-3 ms-2"></i>
-                                 <div>
-                                     <h5 class="mb-0 fw-bold">Affordable</h5>
-                                     <small>Transparent Pricing</small>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-light-blue">
-        <div class="container">
-            <h2 class="section-title">Visit Us / Contact Us</h2>
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <div class="bg-white p-4 rounded shadow-sm h-100">
-                        <h4 class="fw-bold mb-4 text-primary">Get in Touch</h4>
-                        
-                        <div class="d-flex mb-4">
-                            <i class="fas fa-map-marker-alt fa-lg text-primary mt-1 me-3"></i>
-                            <div>
-                                <h6 class="fw-bold mb-1">Vansh Labs Center</h6>
-
-http://googleusercontent.com/map_location_reference/1
-                                <p class="mb-0 text-muted">Plot 123, Health City, [Madhapur](http://googleusercontent.com/map_location_reference/0), Hyderabad, Telangana 500081.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <i class="fas fa-phone-alt fa-lg text-primary mt-1 me-3"></i>
-                            <div>
-                                <h6 class="fw-bold mb-1">Call Us</h6>
-                                <p class="mb-0 text-muted">+91 98765 43210</p>
-                                <p class="mb-0 text-muted">040-12345678</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                             <i class="fas fa-envelope fa-lg text-primary mt-1 me-3"></i>
-                             <div>
-                                 <h6 class="fw-bold mb-1">Email Us</h6>
-                                 <p class="mb-0 text-muted">info@vanshlabs.com</p>
-                             </div>
-                         </div>
-                         <hr>
-                         <div>
-                             <a href="#" class="me-3 text-primary"><i class="fab fa-facebook fa-lg"></i></a>
-                             <a href="#" class="me-3 text-primary"><i class="fab fa-twitter fa-lg"></i></a>
-                             <a href="#" class="text-primary"><i class="fab fa-instagram fa-lg"></i></a>
-                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-7">
-                    <div class="rounded overflow-hidden shadow-sm" style="height: 100%; min-height: 400px; background:#eee;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.475572831058!2d78.48667100000002!3d17.385044000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99c449696557%3A0x77514347509056!2sCharminar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+    </div>
 
     <footer>
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="mb-3"><i class="fas fa-microscope me-2"></i>Vansh Labs</h4>
-                    <p class="small">Providing world-class diagnostic imaging and pathology services with a commitment to accuracy and patient care.</p>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-3">Vansh Labs</h4>
+                    <p class="text-secondary-light small">India's trusted diagnostic partner committed to accuracy and
+                        patient care.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-3 text-warning">Quick Links</h5>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
                         <li><a href="#packages">Health Packages</a></li>
-                        <li><a href="#contact">Book Appointment</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3 text-warning">Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="service-details.html?id=mri">MRI Scan</a></li>
-                        <li><a href="service-details.html?id=ctscan">CT Scan</a></li>
-                        <li><a href="service-details.html?id=ultrasound">Ultrasound</a></li>
-                        <li><a href="service-details.html?id=pathology">Pathology</a></li>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Contact Info</h5>
+                    <ul class="list-unstyled text-secondary-light small">
+
+                        
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>
+                            Vansh Clinics | Narsingi Clinic for General Physician Services, PCOD, Periods, Cysts, Thyroid & Breast Health</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9494335432
+</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@vanshlabs.com</li>
+                        <li class="mb-2"><i class="fab fa-whatsapp me-2"></i> +91 9494335432
+</li>
                     </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-3 text-warning">Contact</h5>
-                    <p class="small mb-1"><i class="fas fa-phone me-2"></i> +91 98765 43210</p>
-                    <p class="small mb-1"><i class="fas fa-envelope me-2"></i> info@vanshlabs.com</p>
                 </div>
             </div>
-            <hr class="mt-4 border-secondary">
-            <div class="text-center small">
-                © 2023 Vansh Labs. All rights reserved.
+            <hr class="border-secondary my-4">
+            <div class="text-center small text-secondary-light">
+                &copy; 2026 Vansh Labs. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Script to collapse mobile navbar on click
-        const navLinks = document.querySelectorAll('.nav-item:not(.dropdown) .nav-link');
-        const menuToggle = document.getElementById('navbarNav');
-        const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
-
-        navLinks.forEach((l) => {
-            l.addEventListener('click', () => {
-                if (menuToggle.classList.contains('show')) {
-                    bsCollapse.hide();
-                }
-            });
+        // Initialize Swiper for Services Section
+        var servicesSwiper = new Swiper(".servicesSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            speed: 2000,
+            effect: 'slide',
+            centeredSlides: true,
+            grabCursor: true,
+            watchSlidesProgress: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                waitForTransition: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
         });
+
+        let calcScrollValue = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
+            let scrollValue = Math.round((pos * 100) / calcHeight);
+            if (pos > 100) {
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+            scrollProgress.style.background = `conic-gradient(rgb(var(--primary)) ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+        };
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
     </script>
 </body>
+
+<div class="modal fade" id="glucose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Glucose Profile</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">FBS</span>
+                        <span class="small fw-bold text-primary">₹150</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">RBS</span>
+                        <span class="small fw-bold text-primary">₹150</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">PLBS</span>
+                        <span class="small fw-bold text-primary">₹150</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">HbA1c</span>
+                        <span class="small fw-bold text-primary">₹476</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kideny" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Kidney & Urine</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">KFT</span>
+                        <span class="small fw-bold text-primary">₹250</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">CUE</span>
+                        <span class="small fw-bold text-primary">₹250</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Serum Electrolytes</span>
+                        <span class="small fw-bold text-primary">₹401</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Urea</span>
+                        <span class="small fw-bold text-primary">₹314</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Creatinine</span>
+                        <span class="small fw-bold text-primary">₹314</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Uric Acid</span>
+                        <span class="small fw-bold text-primary">₹314</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Protein Total (24 Hours Urine)</span>
+                        <span class="small fw-bold text-primary">₹401</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="hormones" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Hormones</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">AMH</span>
+                        <span class="small fw-bold text-primary">₹1742</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Beta HCG</span>
+                        <span class="small fw-bold text-primary">₹531</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">S. Prolactin, FSH, LH</span>
+                        <span class="small fw-bold text-primary">₹625</span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cardiac" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Cardiac Markers</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">HS Troponin-I </span>
+                        <span class="small fw-bold text-primary">₹1432</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">D-Dimer (Quantitative)</span>
+                        <span class="small fw-bold text-primary">₹1059</span>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="infectious" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Infectious Makers</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">HBsAg </span>
+                        <span class="small fw-bold text-primary">₹563</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">HIV</span>
+                        <span class="small fw-bold text-primary">₹364</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">HCV</span>
+                        <span class="small fw-bold text-primary">₹562</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">
+                            HCV IgG Antibody 
+                        </span>
+                        <span class="small fw-bold text-primary">₹935</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Widal </span>
+                        <span class="small fw-bold text-primary">₹351</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">VDRL</span>
+                        <span class="small fw-bold text-primary">₹376</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Dengue (NS1 / IgG / IgM)</span>
+                        <span class="small fw-bold text-primary">₹1500</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Malarial Antigen (MP) </span>
+                        <span class="small fw-bold text-primary">₹314</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Chicken IgG Antibody</span>
+                        <span class="small fw-bold text-primary">₹848</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Chikungunya IgM Antibody</span>
+                        <span class="small fw-bold text-primary">₹1059</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="nutritional" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Nutritional / Deficiency</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Ferritin</span>
+                        <span class="small fw-bold text-primary">₹562</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Iron Deficiency Profile</span>
+                        <span class="small fw-bold text-primary">₹1059</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Vitamin D</span>
+                        <span class="small fw-bold text-primary">₹1500</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">
+                            Vitamin D [1,25 (OH)₂ Dihydroxy] 
+                        </span>
+                        <span class="small fw-bold text-primary">₹2115</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Vitamin B12</span>
+                        <span class="small fw-bold text-primary">₹650</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">S. Iron</span>
+                        <span class="small fw-bold text-primary">₹438</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">S. Calcium</span>
+                        <span class="small fw-bold text-primary">₹401</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Lipase</span>
+                        <span class="small fw-bold text-primary">₹389</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Amylase</span>
+                        <span class="small fw-bold text-primary">₹389</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tumor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Tumor Markers</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">CA-125</span>
+                        <span class="small fw-bold text-primary">₹687</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">CA-19.9</span>
+                        <span class="small fw-bold text-primary">₹997</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="rheumatology" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Rheumatology / Autoimmune</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">RA Factor</span>
+                        <span class="small fw-bold text-primary">₹389</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">ASO</span>
+                        <span class="small fw-bold text-primary">₹407</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">ASMA (Anti-Smooth Muscle Antibody)</span>
+                        <span class="small fw-bold text-primary">₹1184</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="others" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Other Specialized Tests</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">PT / INR</span>
+                        <span class="small fw-bold text-primary">₹339</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Hb Electrophoresis</span>
+                        <span class="small fw-bold text-primary">₹997</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">BT, CT</span>
+                        <span class="small fw-bold text-primary">₹376</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Quad Marker</span>
+                        <span class="small fw-bold text-primary">₹1867</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="others" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Other Specialized Tests</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">PT / INR</span>
+                        <span class="small fw-bold text-primary">₹339</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Hb Electrophoresis</span>
+                        <span class="small fw-bold text-primary">₹997</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">BT, CT</span>
+                        <span class="small fw-bold text-primary">₹376</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">Quad Marker</span>
+                        <span class="small fw-bold text-primary">₹1867</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="thyroid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title w-100 text-center" id="staticBackdropLabel">Thyroid Profile</h5>
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-results">
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">Complete Thyroid Profile</span>
+                        <span class="small fw-bold text-primary">₹800</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">T3</span>
+                        <span class="small fw-bold text-primary">₹327</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                        <span class="small fw-bold">T4</span>
+                        <span class="small fw-bold text-primary">₹327</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small fw-bold">TSH</span>
+                        <span class="small fw-bold text-primary">₹326</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>
