@@ -353,11 +353,6 @@ footer a:hover {
     color: rgb(var(--primary));
 }
 
-/* --- Mobile Tweaks --- */
-/* Tablet view - adjusted arrow spacing */
-@media (min-width: 769px) and (max-width:1104px) {
-  
-}
 
 @media (max-width: 768px) {
     .hero-title {
