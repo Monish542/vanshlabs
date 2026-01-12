@@ -1,0 +1,34 @@
+.service-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card .service-card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.service-card:hover .service-card-front {
+  opacity: 0;
+}
+
+.service-card .test-results {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-card:hover .test-results {
+  opacity: 1;
+}
