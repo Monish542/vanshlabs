@@ -216,7 +216,7 @@ body {
 /* --- Swiper Styles --- */
 .servicesSwiper {
     padding: 20px 0 60px 0;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .servicesSwiper .swiper-wrapper {
