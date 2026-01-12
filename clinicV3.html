@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vansh Labs - India's fastest diagnostic lab. Book blood tests, full body checkups with 60-minute home collection and 6-hour reporting.">
+    <title>Vansh Labs | Fast & Accurate Diagnostics (Light Theme)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- CSS Variables (New Light Color Palette) --- */
+        :root {
+            --primary-light: #4aa3df; /* Soft Sky Blue - Main brand color */
+            --primary-dark: #2e86c1; /* Slightly darker blue for hovers */
+            --accent-green: #2ecc71; /* Fresh green for checkmarks/highlights */
+            --secondary-bg: #f0f4f8; /* Very pale cool gray/blue for alternate sections */
+            --text-heading: #333333; /* Soft charcoal for strong headings */
+            --text-body: #666666; /* Medium gray for regular text */
+            --white: #ffffff;
+            --whatsapp-green: #25d366; /* Standard WhatsApp Brand Color */
+            --whatsapp-dark: #20b85c;
+            --shadow-light: 0 4px 25px rgba(0, 0, 0, 0.06); /* Softer, lighter shadow */
+            --border-radius-card: 20px;
+            --border-radius-btn: 50px;
+            --section-spacing: 90px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-body);
+            background-color: var(--white);
+        }
+
+        /* --- Typography & Utilities --- */
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; }
+        h2 { font-size: 2.5rem; }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--primary-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+        }
+
+        /* Light Theme Button Style (Blue) */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: var(--primary-light);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius-btn);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(74, 163, 223, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 163, 223, 0.3);
+        }
+
+
+        section {
+            padding: var(--section-spacing);
+            background-color: var(--white);
+        }
+
+        /* Alternate section background color (Light Gray/Blue) */
+        section:nth-child(even) {
+            background-color: var(--secondary-bg);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: rgba(74, 163, 223, 0.1);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 5px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i { margin-right: 10px; }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-heading);
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-light);
+        }
+
+        /* New Style for WhatsApp Nav Link */
+        .nav-links li a.nav-whatsapp {
+            color: var(--whatsapp-green);
+        }
+        .nav-links li a.nav-whatsapp:hover {
+            color: var(--whatsapp-dark);
+        }
+        .nav-links li a.nav-whatsapp i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Nav button style */
+        .nav-links li .btn-nav {
+            padding: 10px 28px;
+            background-color: var(--primary-light);
+            color: white !important;
+            border-radius: var(--border-radius-btn);
+            box-shadow: 0 4px 10px rgba(74, 163, 223, 0.2);
+        }
+        .nav-links li .btn-nav:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            box-shadow: 0 6px 15px rgba(74, 163, 223, 0.3);
+        }
+
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-heading);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 25px;
+            color: var(--text-heading);
+        }
+
+        /* Highlight span in hero using soft blue */
+        .hero-content h1 span {
+            color: var(--primary-light);
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-body);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Bar Styling (Light Style) */
+        .search-container {
+            display: flex;
+            background: var(--white);
+            border-radius: var(--border-radius-btn);
+            box-shadow: var(--shadow-light);
+            padding: 8px;
+            max-width: 550px;
+            margin: 0 auto; /* Removed bottom margin here to space it from the button below */
+            border: 1px solid #eee;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: var(--border-radius-btn);
+            outline: none;
+            color: var(--text-heading);
+        }
+        .search-input::placeholder { color: #aaa; }
+
+        .search-btn {
+            border-radius: var(--border-radius-btn);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background-color: var(--primary-light);
+            box-shadow: none;
+        }
+        .search-btn:hover {
+            background-color: var(--primary-dark);
+             box-shadow: none;
+        }
+
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        /* Icons change to Blue */
+        .service-card i {
+            font-size: 3.5rem;
+            color: var(--primary-light);
+            margin-bottom: 25px;
+        }
+        .service-card h3 { margin-bottom: 15px; }
+
+        /* --- Why Choose Us --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card i {
+            font-size: 2.8rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        /* --- How It Works (Steps) --- */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .step-number {
+            background: var(--primary-light);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 auto 25px;
+            box-shadow: 0 4px 10px rgba(74, 163, 223, 0.3);
+        }
+
+        /* --- Pricing Section --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pricing-card {
+            padding: 50px 30px;
+        }
+
+        /* Popular package gets a fresh green border */
+        .pricing-card.popular {
+            border: 2px solid var(--accent-green);
+            transform: scale(1.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-heading);
+        }
+
+        .price {
+            font-size: 3rem;
+            color: var(--primary-light);
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 35px;
+            display: inline-block;
+        }
+        .pricing-card ul li {
+            margin-bottom: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        /* List icons use the fresh green accent */
+        .pricing-card ul li i {
+            color: var(--accent-green);
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Testimonials --- */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            text-align: left;
+            font-style: italic;
+            /* Adding a subtle quote icon background using the soft blue */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='%234aa3df' opacity='0.1'%3E%3Cpath d='M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-4.995 3.638-4.995 5.849h4v10h-8.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-4.996 3.638-4.996 5.849h3.983v10h-8.983z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 20px 20px;
+        }
+        .testimonial-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .testimonial-card .client {
+            margin-top: 25px;
+            font-weight: 800;
+            font-style: normal;
+            color: var(--text-heading);
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        details {
+            background: var(--white);
+            margin-bottom: 20px;
+            padding: 20px 25px;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-light);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        details[open] {
+            border-color: rgba(74, 163, 223, 0.3);
+        }
+        summary {
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-heading);
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: '+';
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            font-weight: 300;
+        }
+        details[open] summary::after { content: '-'; }
+        details p { margin-top: 20px; color: var(--text-body); }
+
+        /* --- Contact Form --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-info h3 { margin-bottom: 30px; }
+        .contact-info i {
+            color: var(--primary-light);
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+        .contact-info p { margin-bottom: 25px; display: flex; align-items: center; font-weight: 500;}
+
+        .form-group { margin-bottom: 25px; }
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            color: var(--text-heading);
+            background: var(--secondary-bg); /* Slight background for inputs */
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background: var(--white);
+        }
+
+        select.form-control {
+            appearance: none;
+            /* Updated dropdown arrow to blue */
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%234aa3df" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat right 20px center;
+            background-color: var(--secondary-bg);
+        }
+        select.form-control:focus {
+             background-color: var(--white);
+        }
+
+
+        /* --- Footer (Light Theme) --- */
+        footer {
+            /* Using the soft blue for the footer background */
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 { color: var(--white); }
+        /* Make logo icon white in footer for contrast */
+        .footer-col h3 i { color: var(--white); }
+        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.2rem;}
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 15px; }
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        .footer-col ul li a:hover { color: var(--white); text-decoration: underline;}
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.15);
+            margin-right: 12px;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* --- Responsive Media Queries --- */
+        @media (max-width: 1024px) {
+            .hero-content h1 { font-size: 3rem; }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: auto;
+                padding-bottom: 30px;
+                background: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                flex-direction: column;
+                align-items: center;
+                transition: left 0.3s ease;
+                border-radius: 0 0 20px 20px;
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 15px 0; }
+            /* Remove special nav button style on mobile for cleaner look */
+            .nav-links li .btn-nav {
+                background-color: transparent;
+                color: var(--text-heading) !important;
+                box-shadow: none;
+                padding: 10px 20px;
+            }
+            .nav-links li .btn-nav:hover { color: var(--primary-light) !important; background: transparent; box-shadow: none;}
+
+
+            #hero { padding-top: 140px; padding-bottom: 60px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .search-container { flex-direction: column; padding: 15px; box-shadow: var(--shadow-light); margin-bottom: 20px;}
+            .search-input { border-radius: var(--border-radius-btn); margin-bottom: 15px; border: 2px solid #eee; text-align: center; background: var(--secondary-bg);}
+            .search-btn { width: 100%; }
+
+            .contact-container { grid-template-columns: 1fr; padding: 30px;}
+            .pricing-card.popular { transform: scale(1); }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">
+                    <i class="fas fa-heartbeat"></i> Vansh Labs
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#pricing">Packages</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li>
+                        <a href="https://wa.me/919876543210?text=Hi%20Vansh%20Labs,%20I%20need%20help." target="_blank" class="nav-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Service
+                        </a>
+                    </li>
+                    <li><a href="#contact" class="btn-nav">Book Test</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>India's Fastest Diagnostic Lab. <span>60-Minute Collection.</span></h1>
+                <p>Book blood tests & full body checkups. Get reports in 6 hours. Trusted by doctors, loved by patients.</p>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" id="hero-search-input" placeholder="Search for tests (e.g., Vitamin D, Hba1c)...">
+                    <button class="btn search-btn" id="hero-search-btn"><i class="fas fa-search"></i> Find Test</button>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <p>Our Offerings</p>
+                <h2>Lab Tests at Your Doorstep</h2>
+            </div>
+            <div class="services-grid">
+                <div class="card service-card">
+                    <i class="fas fa-vial"></i>
+                    <h3>All Blood Tests</h3>
+                    <p>From CBC to vitamins, we cover 2000+ comprehensive tests.</p>
+                </div>
+                <div class="card service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Full Body Checkups</h3>
+                    <p>Preventive health packages tailored for your age and lifestyle.</p>
+                </div>
+                <div class="card service-card">
+                    <i class="fas fa-stopwatch"></i>
+                    <h3>60-Min Collection</h3>
+                    <p>Our highly trained eMedic reaches your home within an hour.</p>
+                </div>
+                <div class="card service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fastest Reporting</h3>
+                    <p>Get accurate reports delivered digitally within 6 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <p>The Vansh Difference</p>
+                <h2>Why We Are Different</h2>
+            </div>
+            <div class="features-grid">
+                <div class="card feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>NABL Certified Labs</h3>
+                    <p>Processed in world-class labs for 100% accuracy.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fas fa-user-nurse"></i>
+                    <h3>Trained eMedics</h3>
+                    <p>Hygienic, painless sample collection by certified professionals.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fas fa-temperature-low"></i>
+                    <h3>Cool-Chain Transport</h3>
+                    <p>Samples transported in temperature-controlled kits to ensure stability.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden collection charges. What you see is what you pay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <p>Simple Steps</p>
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Book Online</h3>
+                    <p>Choose your test or package and select a time slot.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Sample Collection</h3>
+                    <p>Our eMedic arrives at your doorstep within 60 mins.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Lab Processing</h3>
+                    <p>Sample is analyzed in our advanced NABL labs.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Digital Report</h3>
+                    <p>Receive doctor-verified report via WhatsApp/Email in 6 hrs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <p>Health Packages</p>
+                <h2>Most Popular Checkups</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="card pricing-card">
+                    <h3>Basic Wellness</h3>
+                    <div class="price">₹799</div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 45+ Parameters</li>
+                        <li><i class="fas fa-check-circle"></i> Complete Blood Count</li>
+                        <li><i class="fas fa-check-circle"></i> Diabetes Screen (HbA1c)</li>
+                        <li><i class="fas fa-check-circle"></i> Lipid Profile</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width:100%">Book Now</a>
+                </div>
+                <div class="card pricing-card popular">
+                    <h3>Essential Full Body</h3>
+                    <div class="price">₹1599</div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 70+ Parameters</li>
+                        <li><i class="fas fa-check-circle"></i> Includes Basic Wellness</li>
+                        <li><i class="fas fa-check-circle"></i> Liver Function Test</li>
+                        <li><i class="fas fa-check-circle"></i> Kidney Function Test</li>
+                        <li><i class="fas fa-check-circle"></i> Thyroid Profile</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width:100%">Book Now</a>
+                </div>
+                <div class="card pricing-card">
+                    <h3>Comprehensive Fit</h3>
+                    <div class="price">₹2999</div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 90+ Parameters</li>
+                        <li><i class="fas fa-check-circle"></i> Includes Essential Package</li>
+                        <li><i class="fas fa-check-circle"></i> Vitamin D & B12</li>
+                        <li><i class="fas fa-check-circle"></i> Iron Profile</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="width:100%">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <p>Customer Love</p>
+                <h2>Trusted by 1 Million+ Patients</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="card testimonial-card">
+                    <p>"Unbelievably fast! Booked at 8 AM, sample collected by 9 AM, and got reports by 2 PM. The eMedic was very professional and hygienic. Vansh Labs is my go-to now."</p>
+                    <div class="client">Rahul V.</div>
+                </div>
+                <div class="card testimonial-card">
+                    <p>"I needed a Full Body Checkup for my parents. The home collection was smooth, painless, and on time. The reporting speed is unmatched in the industry."</p>
+                    <div class="client">Priya S.</div>
+                </div>
+                <div class="card testimonial-card">
+                    <p>"Very impressed with the cool-chain transport they use for samples. It gives me confidence in the accuracy of the results. Highly recommended service."</p>
+                    <div class="client">Amit K.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <p>Got Questions?</p>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <details>
+                    <summary>How fast will the eMedic arrive?</summary>
+                    <p>Our eMedic will arrive at your selected location within 60 minutes of booking a slot, guaranteed.</p>
+                </details>
+                <details>
+                    <summary>Are your labs certified?</summary>
+                    <p>Yes, all samples are processed in our state-of-the-art NABL and ICMR certified laboratories to ensure 100% accuracy.</p>
+                </details>
+                <details>
+                    <summary>How do I receive my reports?</summary>
+                    <p>You will receive a secure link to download your digital reports via WhatsApp and Email within 6 hours of sample collection.</p>
+                </details>
+                <details>
+                    <summary>Is fasting required for all tests?</summary>
+                    <p>No. While tests like Blood Sugar Fasting and Lipid Profile require 10-12 hours of fasting, many others do not. Specific instructions are provided during booking.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <p>Ready to Book?</p>
+                <h2>Schedule Your Test</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> care@vanshlabs.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tech Park, Bengaluru, India</p>
+                    <p><i class="fas fa-clock"></i> 6:30 AM - 10:00 PM (Daily)</p>
+                </div>
+
+                <form id="booking-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Patient Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Select Test/Package</option>
+                            <option value="basic">Basic Wellness (₹799)</option>
+                            <option value="standard">Essential Full Body (₹1599)</option>
+                            <option value="premium">Comprehensive Fit (₹2999)</option>
+                            <option value="other">Looking for a specific test</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Preferred Time Slot</option>
+                            <option value="slot1">Morning (7AM - 10AM)</option>
+                            <option value="slot2">Afternoon (12PM - 3PM)</option>
+                            <option value="slot3">Evening (5PM - 8PM)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-heartbeat"></i> Vansh Labs</h3>
+                    <p style="margin-top: 20px; color: rgba(255,255,255,0.8);">India's fastest and most trusted diagnostic service, delivering health to your doorstep.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#hero">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#hero">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Top Tests</h4>
+                    <ul>
+                        <li><a href="#">RT-PCR</a></li>
+                        <li><a href="#">Vitamin D Test</a></li>
+                        <li><a href="#">Thyroid Profile</a></li>
+                        <li><a href="#">Diabetes Check</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Vansh Labs Pvt Ltd. All rights reserved. Privacy Policy | Terms.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210?text=Hi%20Vansh%20Labs,%20I%20want%20to%20book%20a%20test." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Search Button Handler (Simulation)
+        const searchBtn = document.getElementById('hero-search-btn');
+        const searchInput = document.getElementById('hero-search-input');
+
+        searchBtn.addEventListener('click', () => {
+            const searchTerm = searchInput.value;
+            if (searchTerm.trim() !== "") {
+                alert(`Searching for test: "${searchTerm}"...`);
+            } else {
+                alert("Please enter a test name to search.");
+            }
+        });
+
+        // Simple Form Submit Simulation
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Booking received! Our eMedic will call you shortly to confirm the slot.");
+            bookingForm.reset();
+        });
+    </script>
+
+</body>
+</html>

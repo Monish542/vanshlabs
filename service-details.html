@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | Vansh Labs</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #005b96;
+            --accent-color: #ffc107;
+            --light-blue: #e3f2fd;
+            --whatsapp-color: #25D366;
+        }
+        body { font-family: 'Roboto', sans-serif; padding-top: 76px; }
+        
+        /* Navbar */
+        .navbar { background-color: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .navbar-brand { font-weight: 700; color: var(--primary-blue); font-size: 1.5rem; }
+        
+        /* Hero Section */
+        .hero-details {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #003d66 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+        
+        /* Hero Buttons Styling (Copied from Index) */
+        .btn-hero-primary {
+            background-color: var(--accent-color);
+            color: #000;
+            font-weight: 600;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        .btn-hero-primary:hover {
+            background-color: #e0a800;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .btn-hero-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        .btn-hero-whatsapp:hover {
+            background-color: #1ebc57;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Content Styling */
+        .service-icon-large {
+            font-size: 8rem;
+            color: var(--primary-blue);
+            background: var(--light-blue);
+            padding: 40px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: #28a745;
+            font-weight: 700;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            border-left: 5px solid var(--primary-blue);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-microscope me-2"></i>Vansh Labs
+            </a>
+            <a href="index.html" class="btn btn-outline-primary ms-auto">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="hero-details text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold" id="serviceTitle">Loading Service...</h1>
+            <p class="lead">Advanced Diagnostic Services by Vansh Labs</p>
+            
+            <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+                <a href="index.html#contact" class="btn btn-hero-primary shadow">
+                    <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                </a>
+                <a href="https://wa.me/919876543210" class="btn btn-hero-whatsapp shadow">
+                    <i class="fab fa-whatsapp me-2"></i>WhatsApp Service
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center mb-4 mb-md-0">
+                <div class="service-icon-large">
+                    <i id="serviceIcon" class="fas fa-spinner fa-spin"></i>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <h2 class="mb-3 text-primary">About this Service</h2>
+                <p class="lead text-muted" id="serviceDesc">Please select a service from the home page.</p>
+                
+                <div class="price-tag mb-4" id="servicePrice"></div>
+
+                <div class="info-card">
+                    <h5><i class="fas fa-info-circle me-2"></i>Preparation / Instructions</h5>
+                    <p class="mb-0" id="servicePrep">No specific preparation required.</p>
+                </div>
+
+                <div class="mt-4">
+                    <a href="index.html#contact" class="btn btn-warning btn-lg px-5 fw-bold">Book This Test Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <small>© 2023 Vansh Labs. Madhapur, Hyderabad.</small>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Define Data for all services
+        const servicesData = {
+            'pathology': {
+                title: "Pathology Lab",
+                icon: "fa-flask",
+                desc: "Our advanced pathology lab performs a wide range of tests including Hematology, Biochemistry, Clinical Pathology, and Microbiology using fully automated analyzers for precise results.",
+                price: "Starts @ ₹299",
+                prep: "Fasting may be required for 10-12 hours depending on the specific blood test (e.g., Lipid Profile, Fasting Sugar)."
+            },
+            'mri': {
+                title: "MRI Scan (3 Tesla)",
+                icon: "fa-ring",
+                desc: "High-definition Magnetic Resonance Imaging (MRI) for detailed views of the brain, spine, joints, and soft tissues. Our 3T machine ensures shorter scan times and clearer images.",
+                price: "Starts @ ₹3,500",
+                prep: "Remove all metal objects/jewelry. Inform technician if you have any implants or pacemaker."
+            },
+            'ctscan': {
+                title: "Multislice CT Scan",
+                icon: "fa-procedures",
+                desc: "Rapid cross-sectional imaging for the chest, abdomen, and head. Essential for detecting internal injuries, tumors, and bone fractures quickly.",
+                price: "Starts @ ₹2,000",
+                prep: "You may need to fast for 4 hours if contrast dye is used. Wear loose comfortable clothing."
+            },
+            'ultrasound': {
+                title: "Ultrasound / Color Doppler",
+                icon: "fa-baby",
+                desc: "Safe, radiation-free imaging using sound waves. Used for pregnancy monitoring, abdominal organs, and vascular blood flow studies (Doppler).",
+                price: "Starts @ ₹800",
+                prep: "For Abdomen scans, drink plenty of water to have a full bladder. For other scans, no prep needed."
+            },
+            'xray': {
+                title: "Digital X-Ray",
+                icon: "fa-x-ray",
+                desc: "High-quality digital radiography with significantly lower radiation exposure than traditional X-rays. Instant reporting available.",
+                price: "Starts @ ₹400",
+                prep: "Remove metal objects and jewelry from the area being scanned."
+            },
+            'cardiology': {
+                title: "Cardiology (ECG / Echo)",
+                icon: "fa-heartbeat",
+                desc: "Complete heart health evaluation including 12-lead ECG and 2D Echocardiography to assess heart rhythm and pumping function.",
+                price: "Starts @ ₹300",
+                prep: "No specific preparation required. Wear a shirt/blouse that can be easily unbuttoned."
+            },
+            'homecollect': {
+                title: "Home Sample Collection",
+                icon: "fa-motorcycle",
+                desc: "Our trained phlebotomists visit your home to collect blood/urine samples hygienically. Reports are delivered via email and WhatsApp.",
+                price: "Free (Orders > ₹500)",
+                prep: "Follow fasting instructions if applicable to your test. Keep ID proof handy."
+            },
+            'consultation': {
+                title: "Expert Consultation",
+                icon: "fa-user-md",
+                desc: "Discuss your reports with our panel of experienced Radiologists and Pathologists to understand your health status better.",
+                price: "Starts @ ₹500",
+                prep: "Bring all previous medical reports and prescriptions."
+            }
+        };
+
+        // 2. Get ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceId = urlParams.get('id');
+
+        // 3. Populate Page
+        if (serviceId && servicesData[serviceId]) {
+            const data = servicesData[serviceId];
+            document.getElementById('serviceTitle').innerText = data.title;
+            document.getElementById('serviceIcon').className = `fas ${data.icon}`;
+            document.getElementById('serviceDesc').innerText = data.desc;
+            document.getElementById('servicePrice').innerText = data.price;
+            document.getElementById('servicePrep').innerText = data.prep;
+        } else {
+            document.getElementById('serviceTitle').innerText = "Service Not Found";
+            document.getElementById('serviceDesc').innerText = "Please return to the home page and select a valid service.";
+        }
+    </script>
+
+</body>
+</html>

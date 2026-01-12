@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vansh Labs - India's leading diagnostic center. Book blood tests, full body checkups with free home collection.">
+    <title>Vansh Labs | Advanced Diagnostics & Pathology</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Theme Variables --- */
+        :root {
+            --primary: #00b5e2; /* Healthians-style Cyan Blue */
+            --primary-dark: #008cb0;
+            --secondary: #2c3e50; /* Dark Slate for Text */
+            --accent: #ff9f43; /* Orange for urgent buttons */
+            --light-bg: #f4f9fc;
+            --white: #ffffff;
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0, 181, 226, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary);
+            overflow-x: hidden;
+            padding-top: 76px; /* Space for fixed navbar */
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+
+        /* --- Navbar --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: var(--secondary);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+        .btn-nav {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            padding: 8px 25px;
+        }
+        .btn-nav:hover { background-color: var(--primary-dark); color: white; }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-title span { color: var(--primary); }
+        .hero-subtitle { font-size: 1.1rem; color: #666; margin-bottom: 30px; }
+        
+        /* Hero Buttons */
+        .btn-main {
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: transform 0.3s;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 181, 226, 0.4);
+        }
+        .btn-primary-custom:hover { background-color: var(--primary-dark); color: white; transform: translateY(-2px); }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        .btn-whatsapp:hover { background-color: #1ebc57; color: white; transform: translateY(-2px); }
+
+        /* --- Section Titles --- */
+        .section-padding { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h6 { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .section-header h2 { font-weight: 700; margin-top: 10px; }
+
+        /* --- Cards General --- */
+        .custom-card {
+            background: white;
+            border-radius: var(--radius);
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        /* --- Services --- */
+        .service-icon-box {
+            width: 70px;
+            height: 70px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        /* --- How It Works --- */
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+
+        /* --- Pricing --- */
+        .price-tag { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .popular-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* --- Map --- */
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        footer a { color: #94a3b8; text-decoration: none; }
+        footer a:hover { color: var(--primary); }
+
+        /* --- Mobile Tweaks --- */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            #hero { text-align: center; }
+            .btn-main { width: 100%; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-microscope me-2"></i>Vansh Labs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="#contact" class="btn btn-nav">Book Test</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Your Health, Our Priority.<br><span>Smart Diagnostics.</span></h1>
+                    <p class="hero-subtitle">India's most trusted online diagnostic clinic. Accurate reports, NABL certified labs, and free home sample collection.</p>
+                    <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+                        <a href="#contact" class="btn btn-main btn-primary-custom">
+                            <i class="fas fa-calendar-check me-2"></i>Book Online
+                        </a>
+                        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-main btn-whatsapp">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp Service
+                        </a>
+                    </div>
+                    <div class="mt-4 d-flex gap-4 justify-content-lg-start justify-content-center text-muted">
+                        <small><i class="fas fa-check-circle text-success me-1"></i> ISO Certified</small>
+                        <small><i class="fas fa-check-circle text-success me-1"></i> 5M+ Happy Patients</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+                    <img src="https://img.freepik.com/free-vector/scientists-working-laboratory-medical-research-lab-science-chemical-pharmacy-education-concept_33099-1707.jpg?w=900" alt="Lab Diagnostic" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>What We Do</h6>
+                <h2>Our Diagnostic Services</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center">
+                        <div class="service-icon-box"><i class="fas fa-vial"></i></div>
+                        <h5>Blood Tests</h5>
+                        <p class="text-muted small">CBC, Thyroid, Diabetes, Lipid Profile, and more.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center">
+                        <div class="service-icon-box"><i class="fas fa-heartbeat"></i></div>
+                        <h5>Full Body Checkups</h5>
+                        <p class="text-muted small">Comprehensive health packages for all age groups.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center">
+                        <div class="service-icon-box"><i class="fas fa-home"></i></div>
+                        <h5>Home Collection</h5>
+                        <p class="text-muted small">Free, hygienic sample collection at your doorstep.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center">
+                        <div class="service-icon-box"><i class="fas fa-file-medical-alt"></i></div>
+                        <h5>Online Reports</h5>
+                        <p class="text-muted small">Download smart reports within 6-12 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-scientist-working-with-microscope_23-2148169128.jpg?w=800" class="img-fluid rounded-4 shadow" alt="Lab Doctor">
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h6 class="text-primary fw-bold text-uppercase mb-2">Why Choose Vansh Labs</h6>
+                    <h2 class="fw-bold mb-4">Precision You Can Trust</h2>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-3"><i class="fas fa-bullseye fa-2x text-primary"></i></div>
+                        <div>
+                            <h5>100% Accuracy</h5>
+                            <p class="text-muted small">Automated analyzers and NABL certified processes ensure zero error.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3"><i class="fas fa-bolt fa-2x text-primary"></i></div>
+                        <div>
+                            <h5>Fastest Reporting</h5>
+                            <p class="text-muted small">Get digital reports on WhatsApp and Email in record time.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3"><i class="fas fa-wallet fa-2x text-primary"></i></div>
+                        <div>
+                            <h5>Affordable Pricing</h5>
+                            <p class="text-muted small">Save up to 50% on market prices with our special packages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Process</h6>
+                <h2>How It Works</h2>
+            </div>
+            <div class="row text-center position-relative">
+                <div class="col-md-3 mb-4">
+                    <div class="step-circle">1</div>
+                    <h5 class="fw-bold">Book Test</h5>
+                    <p class="text-muted small">Select package & schedule time.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-circle">2</div>
+                    <h5 class="fw-bold">Home Collection</h5>
+                    <p class="text-muted small">Phlebotomist visits your home.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-circle">3</div>
+                    <h5 class="fw-bold">Lab Analysis</h5>
+                    <p class="text-muted small">Sample processed in lab.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-circle">4</div>
+                    <h5 class="fw-bold">Online Report</h5>
+                    <p class="text-muted small">Report sent via Email/App.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors" class="section-padding" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h6>Team</h6>
+                <h2>Meet Our Experts</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Rajesh Kumar</h5>
+                        <p class="text-primary small fw-bold">MD, Pathology</p>
+                        <p class="text-muted small">15+ Years Experience in Clinical Pathology and Diagnostics.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Anita Desai</h5>
+                        <p class="text-primary small fw-bold">PhD, Microbiology</p>
+                        <p class="text-muted small">Expert in Infectious Diseases and Molecular Biology.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card text-center p-4">
+                        <img src="https://img.freepik.com/free-photo/hospital-healthcare-workers-covid-19-treatment-concept-young-doctor-scrubs-making-daily-errands-clinic-listening-patient-symptoms-look-camera-professional-physician-cure-diseases_1258-57233.jpg?w=300" class="rounded-circle mb-3 shadow-sm" width="100" height="100" style="object-fit:cover;" alt="Doctor">
+                        <h5>Dr. Sameer Khan</h5>
+                        <p class="text-primary small fw-bold">Senior Biochemist</p>
+                        <p class="text-muted small">10+ Years ensuring accuracy in biochemical analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Affordable Health</h6>
+                <h2>Popular Packages</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center">
+                        <h4 class="fw-bold mb-3">Basic Wellness</h4>
+                        <div class="price-tag mb-3">₹799</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Complete Hemogram</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Diabetes Screen (Fast)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lipid Profile</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Kidney Function Test</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center border border-2 border-info position-relative">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <h4 class="fw-bold mb-3">Full Body Checkup</h4>
+                        <div class="price-tag mb-3">₹1499</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Includes Basic Wellness</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Liver Function Test</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Thyroid Profile (T3, T4, TSH)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Vitamin D & B12</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-nav w-100">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="custom-card p-4 text-center">
+                        <h4 class="fw-bold mb-3">Senior Citizen Care</h4>
+                        <div class="price-tag mb-3">₹2999</div>
+                        <ul class="list-unstyled text-start mb-4 ps-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Includes Full Body Checkup</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cardiac Risk Markers</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>HbA1c (3 Month Sugar)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Iron Profile</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary rounded-pill w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h6>Testimonials</h6>
+                <h2>What Patients Say</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="custom-card p-4">
+                        <div class="mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted fst-italic">"The home collection was extremely convenient. The phlebotomist was on time and very hygienic. Got my reports on WhatsApp the same evening!"</p>
+                        <h6 class="fw-bold mt-3">- Rahul Verma</h6>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-card p-4">
+                        <div class="mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p class="text-muted fst-italic">"I booked the Full Body Checkup for my parents. Vansh Labs offers the best prices and their report quality is top-notch. Highly recommended."</p>
+                        <h6 class="fw-bold mt-3">- Priya Sharma</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>FAQ</h6>
+                <h2>Common Questions</h2>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is home collection free?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Yes, home sample collection is absolutely free for all orders above ₹500.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            When will I get my report?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Most routine test reports are delivered digitally within 6-12 hours of sample collection.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item mb-3 border rounded overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Do I need to fast before the test?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            It depends on the test. For Fasting Blood Sugar and Lipid Profile, 10-12 hours of fasting is required. Our team will guide you during booking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h6>Locations</h6>
+                <h2>Our Branches</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Hyderabad (Main)</h5>
+                    <p class="text-muted small">Plot 123, Health City, Madhapur, Hyderabad, Telangana 500081.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Bangalore</h5>
+                    <p class="text-muted small">45, 1st Main Rd, Indiranagar, Bangalore, Karnataka 560038.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Mumbai</h5>
+                    <p class="text-muted small">Shop 10, Green Park, Andheri West, Mumbai, Maharashtra 400053.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h6>Contact Us</h6>
+                <h2>Book Your Appointment</h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="custom-card p-5">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Full Name</label>
+                                <input type="text" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+91 9876543210" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Select Test</label>
+                                <select class="form-select">
+                                    <option>Full Body Checkup</option>
+                                    <option>Basic Wellness</option>
+                                    <option>Senior Citizen Care</option>
+                                    <option>Others</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Preferred Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-nav w-100 py-2 mt-2">Confirm Booking</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Madhapur,Hyderabad&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-3">Vansh Labs</h4>
+                    <p class="text-secondary-light small">India's trusted diagnostic partner committed to accuracy and patient care.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#packages">Health Packages</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-3">Contact Info</h5>
+                    <ul class="list-unstyled text-secondary-light small">
+
+http://googleusercontent.com/map_location_reference/1
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> [Madhapur](http://googleusercontent.com/map_location_reference/0), Hyderabad</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 98765 43210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@vanshlabs.com</li>
+                        <li class="mb-2"><i class="fab fa-whatsapp me-2"></i> +91 98765 43210</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center small text-secondary-light">
+                &copy; 2026 Vansh Labs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
