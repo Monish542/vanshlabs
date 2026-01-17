@@ -272,13 +272,13 @@ body {
 .servicesSwiper .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
-    background: #F1F1F1;
+    background: rgb(var(--primary-dark));
     opacity: 1;
     transition: all 0.3s ease;
 }
 
 .servicesSwiper .swiper-pagination-bullet-active {
-    background: #F1F1F1;
+    background: rgb(var(--primary-dark));
     width: 30px;
     border-radius: 10px;
     opacity: 0.8;
