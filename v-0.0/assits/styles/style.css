@@ -148,7 +148,8 @@ body {
 /* Service section */
 
 #services{
-    background-color: rgba(var(--primary), 0.7);
+    /* background-color: rgba(var(--primary), 0.7); */
+    background-color: var(--light-bg);
     position: relative;
     h6{
         color: rgb(var(--primary-dark));
@@ -156,7 +157,8 @@ body {
         font-weight: 700
     }
     h2{
-        color: rgb(var(--white-bg));
+        /* color: rgb(var(--white-bg)); */
+        color:rgb(var(--primary-dark)) ;
     }
 }
 
